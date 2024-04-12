@@ -1,0 +1,48 @@
+class Solution:
+    def solve(self, A):
+        l=list(A)
+        l.reverse()
+        s="".join(l)
+        a=0
+        s1=set(l)
+        for i in s1:
+            c=l.count(i)
+            if(c%2!=0):
+                a+=1
+        if(a<=1):
+            return 1
+        else:
+            return 0            
+        
+        #
+        # IMPORTANT LOGIC OF THIS QUESTION
+                
+        # agar zero duplicate hai to never pallindron 
+        # if we have duplicate of every element then pallindron
+        # ek duplicate nahi hai to pallindron
+        
+        # COUNT OF CHARCTER EVEN HAI SARE CHARECTER KE LIYE TO PALLINDRON
+        # COUNT OF CHARCTER EVEN HAI SARE CHARECTER KE LIYE BAS EK KE LIYE ODD HAI  TO PALLINDRON 
+        # OTHER WISE ALL CASE ARE OF NON PALLINDRON 
+        
+          # aabb
+            # abab
+            
+            # "abbaee"
+            
+            # aabbccddeeffgghhii
+            # abcdefghiihgfedcba  
+            
+            # aabbd
+            
+            # abdeba 
+            # abcdea   
+
+            # inttnikjmjbemrberk    
+            
+            
+            
+            
+            
+            
+          
