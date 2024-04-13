@@ -1,0 +1,55 @@
+RADHE RADHE MERI MERI MA
+# ////////////////////THIS CODE EXIED TIME LIMIT////////////////////
+# import math
+# class Solution:
+#     def solve(self, A):
+#         count=0
+#         l=list(set(A))
+#         while A!=[]:
+#             for i in l:
+#                 if i in A:
+#                     A.remove(i) 
+#             count+=1             
+#         return count    
+
+# ///////////////////OPTIMAL SOLUTION ///////////////////////////
+
+
+class Solution:
+    def solve(self,A):
+        f={}
+        count=0
+        s=set(A)
+        
+        # this does not Exceeded the time limit !MOST IMPORTANT
+        for i in A:
+            f[i] = f.get(i, 0) + 1
+            
+        # This also create problem     
+        # for i in s:
+        #     a=A.count(i)
+        #     f[i]=a
+        
+        while f:
+            s1=set(f.keys()) #!IMPORTANT
+            for i in s1:
+                f[i] -=1
+                if(f[i]==0):
+                    del f[i]
+            count+=1
+        return count    
+
+
+
+# LOGIC BEHIND THIS CODE
+
+# CREATE DIC IN WHICH ADD THE COUNT OF EVERY CHARACTER 
+# f.get(i, 0) + 1 WE USE THIS SO THAT TIME LIMIT IS NOT Exceeded..
+# in this f.get() it is use to get the i key element if the element is not exist int the dic then it asign the value of
+# that by 0 and plus one to asign value one and if the element in the dic then this increse the count of that 
+# element by one Thank you ..
+
+# set(f.keys()) WE USE THIS INSIDE THE WHILE LOOP WE CREATE THIS SET BY USING KEYS BECAUSE ONLY THOSE
+# WE DELETE THOSE ELEMENT THOSE PRESENT IN THE DIC
+
+
