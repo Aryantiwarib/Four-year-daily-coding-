@@ -1,0 +1,39 @@
+#RADHE RADHE
+import itertools
+from functools import reduce
+import operator
+class Solution:
+    def solve(self, A):
+        #PRICIES CODE
+        l=[]
+        s = list(itertools.combinations(A, r=4))
+        for i in s :
+            result= reduce(operator.xor, i)
+            l.append(result)
+        return max(l)
+        
+        
+    #LOGIC BEHIND THIS CODE
+    # import itertools
+    # from functools import reduce
+    # import operator
+    
+    # IN THIS QUESTI0N FIST WE NEED TO FIND ALL POSIBLE SUBSEQUENCE OF ARR OF 4 LENGTH 
+    # THEN WE NEED TO CALCULATE THE XOR OF ALL element of all SUBSEQUENCE arr then take the max 
+    # of all and append in the list after that take the max of that list and return 
+      
+      
+      
+        
+        
+        # THIS EXCEEDED THE TIME LIMIT 
+        # result=0
+        # l=[]
+        # m=[]
+        # s = list(itertools.combinations(A, r=4))
+        # for i in s :
+        #     for j in i:
+        #         result ^=j
+        #         l.append(result)
+        #     m.append(max(l))    
+        # return max(m) 
