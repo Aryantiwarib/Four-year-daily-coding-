@@ -1,0 +1,60 @@
+class Solution:
+    def solve(self, A):
+        x = A // 6
+        y = A % 6
+        
+        if y == 1:
+            y = 1
+        else:
+            if y != 0:
+                y = 2
+        
+        ans = 2 * x + y
+        return ans
+
+
+    
+# FULL LOGIC EXPLANATION 
+
+# The variable x is calculated as A // 6. This calculates how many groups of 6 bulbs can be formed
+#  with the given number of bulbs A. Each group of 6 bulbs requires 2 steps to turn on all bulbs,
+#   so 2 * x represents the total number of steps needed for these groups.
+
+# The variable y is calculated as A % 6. This calculates the remainder when A is divided by 6, which
+#  represents the number of bulbs remaining after forming complete groups of 6 bulbs.
+
+# If y equals 1, it means that there is one bulb left after forming groups of 6 bulbs. In this case,
+#  we need to turn on this bulb individually, which requires one step. So, y is set to 1.
+
+# Otherwise, if y is not equal to 1 and is not zero, it means there are some bulbs left (2, 3, 4, or 5 bulbs)
+#  after forming groups of 6 bulbs. In this case, we can turn on these bulbs by forming additional groups of 
+#  6 bulbs. Each additional group requires 2 steps. So, y is set to 2.
+
+# Finally, the total number of steps ans is calculated as 2 * x + y, which accounts for the steps needed 
+# for complete groups of 6 bulbs (2 * x) and the steps needed for the remaining bulbs (y).
+
+
+    
+  
+
+# hame jitne number de rakhe hai utne bulb jalane hai kam se kam step  me kese bhi
+# class Solution:
+    # def solve(self,A):
+    #     l=[]
+    #     a=0
+    #     for i in range(1,A+1):
+    #         l.append(i)
+    #     if A==1:
+    #         return 1
+    #     else:
+    #         for i in range(1,len(l)+1):
+    #             if(l==[]):
+    #                 break
+    #             if i in l:    
+    #                 l.remove(i)
+    #             if(i+2 in l):
+    #                 l.remove(i+2)
+    #             if(i-2 in l):
+    #                 l.remove(i-2) 
+    #             a+=1
+    #     return a  
