@@ -1,0 +1,17 @@
+class Solution:
+    def solve(self, A):
+        l=list(A)
+        s='abcdefghijklmnopqrstuvwxyz'
+        s1=[]
+        for i in s:
+            if(i in A):
+                c=l.count(i)
+                s1.append(c)
+            else:
+                s1.append(0)  
+        return s1          
+        
+# LOGIC 
+
+# run the whole 26 letter string and check whether it is present in the given string or not then we 
+# append count of that char             
