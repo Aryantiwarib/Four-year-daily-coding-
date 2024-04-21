@@ -1,0 +1,12 @@
+class Solution:
+    def solve(self, A, B, C):
+        min_of_b=[]
+        max_of_a=[]
+        for i in A:
+            if i > C:
+                max_of_a.append(i)
+        for i in B:
+            if i<C:
+                min_of_b.append(i)        
+        len_cal=[len(min_of_b),len(max_of_a)]
+        return max(len_cal)        
