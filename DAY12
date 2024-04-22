@@ -1,0 +1,13 @@
+class Solution:
+    def solve(self, A):
+        l=[]
+        m=[]
+        for i in A:
+            if i==0:
+                l.append(i)
+            else:
+                m.append(i)  
+        n=m+l
+        return n          
+                
+                
