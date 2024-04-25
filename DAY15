@@ -1,0 +1,9 @@
+class Solution:
+    def solve(self, A, B, C):
+        a=0
+        for i in A:
+            if(i%2!=0 and B%2==0):
+                a+=C
+            elif(i%2==0 and B%2!=0):
+                a+=C 
+        return a   
