@@ -1,0 +1,12 @@
+class Solution:
+    def solve(self, A, B):
+        l=[]
+        k=[]
+        for i in range(0,len(A),B):
+            a=A[i:i+B]
+            m=list(a)
+            l.append(m)
+        for i in l:
+            c=i.count('a')
+            k.append(c)    
+        return max(k)            
