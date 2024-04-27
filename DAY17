@@ -1,0 +1,47 @@
+from itertools import permutations 
+import math
+class Solution:
+    def solve(self, A):
+        mod=10**9+7
+        return 2*(math.factorial(A))%mod
+        
+        # l=[1]
+        # k=[]
+        # for i in range(2,A+2):
+        #     l.append(i)
+        # m=list(permutations(l,A+1))
+        
+        # for perm in M:
+        #     valid = True
+        #     for i in range(len(perm) - 1):
+        #         if perm[i] == 1 and perm[i+1] != 2:
+        #             valid = False
+        #             break
+        #     if valid:
+        #         L.append(perm)  
+        #         return len(k)  
+        
+        
+        
+        # filtered_perms = [perm for perm in perms if perm[0] == L[0] and perm[-1] == L[-1]]
+        
+        
+        
+# FIRST CODE :
+
+# from itertools import permutations 
+# class Solution:
+#     def solve(self, A):
+#         l=[1]
+#         k=[]
+#         for i in range(2,A+2):
+#             l.append(i)
+#         m=list(permutations(l,A+1))
+#         for i in range(len(m)):
+#             for j in range(len(m[i])-1):
+#                 if(m[i][j]==1 and m[i][j+1]==2):
+#                     k.append(m[i])
+#                 elif(m[i][j]==2 and m[i][j+1]==1):
+#                     k.append(m[i])   
+#         return len(k)  
+                
