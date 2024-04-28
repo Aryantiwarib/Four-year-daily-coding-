@@ -1,0 +1,13 @@
+class Solution:
+    def solve(self, A, B):
+        days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        if(A=='Monday'):
+            return B//7
+        else:
+            index=days.index(A)
+            C=B+index
+            return C//7
+    # Logic:
+    # .First we Check The day if The day is Monday Then We simply return the multiple of seven otherwise we 
+    # add no of days to the B to make it moday and then return the multiple of 7
+                                
