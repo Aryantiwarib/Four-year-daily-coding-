@@ -1,0 +1,12 @@
+class Solution:
+    def solve(self, A):
+        s=str(A)
+        l=list(s)
+        a=0
+        for i in l:
+            a+=int(i)**len(l)
+        if(a==A):
+            return 1
+        else:
+            return 0        
+            
