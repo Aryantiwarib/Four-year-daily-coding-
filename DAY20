@@ -1,0 +1,12 @@
+class Solution:
+    def solve(self, A):
+        if(A%4==0 and (A%100!=0 or A%400==0)):
+            return 1
+        else:
+            return 0
+  
+  
+  
+# The year can be evenly divided by 4, is a leap year, unless:
+# The year can be evenly divided by 100, it is NOT a leap year, unless:
+# The year is also evenly divisible by 400. Then it is a leap year.                
