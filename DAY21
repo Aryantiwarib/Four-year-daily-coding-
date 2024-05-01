@@ -1,0 +1,9 @@
+class Solution:
+    def solve(self, A):
+        a=''
+        for i in A:
+            if(i.isupper()==True):
+                a+=i.lower()
+            else:
+                a+=i.upper()
+        return a            
