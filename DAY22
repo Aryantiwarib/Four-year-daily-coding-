@@ -1,0 +1,21 @@
+class Solution:
+    def solve(self, A):
+        months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+                
+        if(5>=A>=3):
+            return'Spring'
+        
+        elif(8>=A>=6):
+            return"Summer"
+        elif(11>=A>=9):
+            return"Autumn"
+        elif(A==12 or A==1 or A==2):
+            return"Winter"
+        else:
+            return "Invalid"            
+
+
+        # spring=3 to 5
+        # summer=6 to 8
+        # Autumn=9 to 11
+        # Winter= 12 to 14
