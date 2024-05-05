@@ -1,0 +1,28 @@
+#  and A.islower()==True and A.isupper()==True and A.isdigit()==True
+class Solution:
+    def solve(self, A):
+        s="!#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
+        a="abcdefghijklmnopqrstuvwxyz"
+        a1="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        a2="0123456789"
+        count1=0
+        count2=0
+        count3=0
+        count4=0
+        if(len(A)>=8 and len(A)<=15):
+            for i in A:
+                if i in s:
+                    count1+=1
+                elif i in a:
+                    count2+=1
+                elif i in a1:
+                    count3+=1
+                elif i in a2:
+                    count4+=1            
+            if(count1>0 and count2>0 and count3>0 and count4>0):
+                return 1
+            else:
+                return 0
+        else:
+            return 0
+                               
