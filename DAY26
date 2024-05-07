@@ -1,0 +1,10 @@
+class Solution:
+    def solve(self, A):
+        l=A.split()
+        c=0
+        for i in l:
+            m=list(i)
+            n=list(reversed(m))
+            if(m==n):
+                c+=1
+        return c
