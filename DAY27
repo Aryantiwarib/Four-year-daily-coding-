@@ -1,0 +1,26 @@
+# This is gpt one
+class Solution:
+    def repeatedNumber(self, A):
+        n = len(A)
+        bucket_size = int(n**0.5)  # Determine the size of each bucket
+        buckets = [0] * ((n // bucket_size) + 1)  # Initialize buckets
+        
+        for num in A:
+            bucket_index = (num - 1) // bucket_size  # Determine the bucket index for the number
+            if buckets[bucket_index] == 0:
+                buckets[bucket_index] = set()  # Initialize a set in the bucket if not already done
+            elif num in buckets[bucket_index]:  # If number already exists in the set, it's a repeated number
+                return num
+            buckets[bucket_index].add(num)  # Add the number to the corresponding bucket set
+        
+        return -1
+        
+
+# my solution 
+# class Solution:
+#     def repeatedNumber(self, A):
+#         s=set(A)
+#         for i in s:
+#             if A.count(i)>1:
+#                 return i
+#         return -1        
