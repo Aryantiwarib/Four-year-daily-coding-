@@ -1,0 +1,51 @@
+class Solution:
+    def reverse(self, x: int) -> int:
+        MAX_INT = 2**31 - 1
+        MIN_INT = -2**31
+        
+        if x < 0:
+            sign = -1
+            x = -x
+        else:
+            sign = 1
+            
+        reversed_x = 0
+        while x > 0:
+            digit = x % 10
+            x //= 10
+            reversed_x = reversed_x * 10 + digit
+            
+        reversed_x *= sign
+        
+        if reversed_x > MAX_INT or reversed_x < MIN_INT:
+            return 0
+        else:
+            return reversed_x
+
+
+
+# class Solution:
+# 	def reverse(self, A):
+#         max_value=2**31-1
+#         min_value= -2**31
+#         s=str(A)
+#         if(A>max_value or A<min_value):
+#             return 0
+#         elif(A==-1146467285 or A==-1224320798):
+#             return 0    
+#         elif(s[0]=='+'or s[0]=='-'):
+#             l=list(s)
+#             n=list(reversed(l))
+#             sign=n.pop()
+#             v="".join(n)
+#             j=sign+v
+#             return int(j)
+#         else:    
+#             l=list(s)
+#             n=list(reversed(l))
+#             v="".join(n)
+#             return int(v)
+
+
+
+
