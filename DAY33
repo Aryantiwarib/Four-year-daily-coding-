@@ -1,0 +1,24 @@
+class Solution:
+    def solve(self,A):
+        if(A[len(A)-1].isdigit()==True):
+           A= A+"s"
+        l=[]
+        a=''
+        i=True
+        for i in A:
+            if(i.isdigit()==False):
+                i=False
+        if(i):
+            return int(A)
+        else:        
+            for i in range(len(A)-1):
+                if(A[i].isdigit()):
+                    a+=A[i]
+                    if(A[i+1].isdigit()==False):
+                        l.append(int(a))
+                        a=''
+                    else:
+                        continue
+            return sum(l)               
+            
+        
