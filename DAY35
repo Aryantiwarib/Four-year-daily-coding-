@@ -1,0 +1,75 @@
+# solution
+
+class Solution:
+	def titleToNumber(self, A):
+	    T = dict(zip('ABCDEFGHIJKLMNOPQRSTUVWXYZ', range(1,27)))
+	    return sum(T[ch] * 26**i for i, ch in enumerate(A[::-1]))yy
+
+
+
+
+# Logic understand by me 
+
+# A='ABCD'
+# # print(A[::-1])
+# T = dict(zip('ABCDEFGHIJKLMNOPQRSTUVWXYZ', range(1,27)))
+# # print(T)
+# S=(T[ch] * 26**i for i, ch in enumerate(A[::-1]))
+# # print(list(S))
+
+# for i, ch in enumerate(A[::-1]):
+#     # print(i)
+#     # print(ch)
+#     print(T[ch] * 26**i)
+
+
+#/////////////////////////// my solution #///////////////////////////
+
+# class Solution:
+# 	def titleToNumber(self, A):
+#         l=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+#         if(len(A)==1):
+#             n=l.index(A)
+#             return n+1
+#         elif(len(A)==2):
+#             n1=l.index(A[0])+1
+#             n=l.index(A[1])
+#             return 26*n1+n+1
+#         elif(len(A)==3):
+#             n1=l.index(A[0])+1
+#             n2=l.index(A[1])+1
+#             n3=l.index(A[2])+1
+#             return 26*n1*(26+n2)+n3
+#         elif(len(A)==4):
+#             n1=l.index(A[0])+1
+#             n2=l.index(A[1])+1
+#             n3=l.index(A[2])+1
+#             n4=l.index(A[3])+1
+#             return 26*n1*(26+n2)+n3 
+            
+            
+            
+
+	  
+            
+            
+            
+ 
+ 
+ 
+#/////////////////////////// Other Logics #///////////////////////////             
+            
+            
+            # 26*28*+4
+            
+            # ABCD==19010   26*28*+26*3+4
+            
+            # AZA==26*52+1
+            # return 703
+            # A==1*26
+            # AA=26*26
+            # AAA==26*26*26
+                    
+            
+
+
