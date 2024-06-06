@@ -1,0 +1,14 @@
+class Solution:
+    def solve(self, A):
+        l=list(A)
+        s=[]
+        m=[]
+        for i in l:
+            if(i not in s):
+                n=l.count(i)
+                m.append(n)
+                s.append(i)
+            else:
+                continue    
+        # m.sort(reverse=True)
+        return m
