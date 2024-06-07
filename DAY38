@@ -1,0 +1,11 @@
+import re
+class Solution:
+    def isPalindrome(self, A):
+        s = re.sub(r'[^a-zA-Z0-9]', '', A).lower()
+        l=list(s)
+        l1=list(reversed(l))
+        if(l==l1):
+            return 1
+        else:
+            return 0    
+        
