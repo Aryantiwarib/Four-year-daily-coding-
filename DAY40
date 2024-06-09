@@ -1,0 +1,39 @@
+# import math
+# class Solution:
+#     def solve(self, A, B):
+#         a=str(int(A)**int(B))
+#         return int(a[-1])
+        
+        
+class Solution:
+    def solve(self, A, B):
+        if B == 0:
+            return 1
+
+        A = int(A)
+        B = int(B)
+        
+        # Last digit cycle pattern of digits 0-9 when raised to successive powers
+        last_digit_cycles = {
+            0: [0],
+            1: [1],
+            2: [2, 4, 8, 6],
+            3: [3, 9, 7, 1],
+            4: [4, 6],
+            5: [5],
+            6: [6],
+            7: [7, 9, 3, 1],
+            8: [8, 4, 2, 6],
+            9: [9, 1]
+        }
+
+        last_digit = A % 10
+        cycle = last_digit_cycles[last_digit]
+        cycle_length = len(cycle)
+        
+        # Reduce B modulo the cycle length
+        # Note: We use (B - 1) % cycle_length + 1 to handle the case where B is a multiple of the cycle length
+        reduced_exponent = (B - 1) % cycle_length + 1
+        
+        return cycle[reduced_exponent - 1]
+        
