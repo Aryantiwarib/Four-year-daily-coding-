@@ -1,0 +1,15 @@
+class Solution:
+    def solve(self, A):
+        l=[]
+        for i in range(len(A)):
+            a=True
+            for j in range(i+1,len(A)):
+                if(A[i]<A[j]):
+                    a=False
+                    break
+            if(a):
+                l.append(A[i])
+        return l        
+                
+                        
+                    
