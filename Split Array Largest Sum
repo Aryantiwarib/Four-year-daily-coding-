@@ -1,0 +1,107 @@
+// 1.We applied binary search 
+// step1: find the start and end start=max value of array end= sum of the array values 
+// 2.find the mid value
+// and make the array such that the sum of the values should not greater then mid value if we add next value and the sum of array become greater then start new array with that value and so on 
+// count the number of arrays if count is greater then give k value
+// then start=mid+1; else end=mid;
+
+
+class Solution {
+    
+    /////////////////////// One Way To solve the question ///////////////////////
+    static int SplitArray(int[] arr,int start,int end,int k){
+        while(start<end){
+            ArrayList <Integer> l=new ArrayList<>();
+            int a=0;
+            int mid=start+(end-start)/2;
+
+            
+            for(int i=0;i<arr.length;i++){
+                if(a+arr[i]==mid){
+                    a+=arr[i];
+                    l.add(a);
+                    a=0;
+                }
+                else if(a+arr[i]>mid && i==arr.length-1){
+                    l.add(a);
+                    a=0;
+                    a+=arr[i];
+                    l.add(a);
+                    a=0;
+                }
+                
+                else if(a+arr[i]>mid){
+                    l.add(a);
+                    a=0;
+                    a+=arr[i];
+                }
+                else if(i==arr.length-1){
+                    a+=arr[i];
+                    l.add(a);
+                    a=0;
+                }
+                else{
+                    a+=arr[i];
+                }
+                
+            }
+
+            if(l.size()<=k){
+                end=mid; // here we understand that mid is larger that is why less number of subarray created to create more number of arrays we need to reduce mid value so for that i will set end=mid
+            }
+            else if(l.size()>k){
+                start=mid+1;
+            }
+        }
+        return start; // start == end so you can return any one
+    }
+
+
+
+
+
+
+ /////////////////////// sorter method ///////////////////////
+     static int SplitArraySortSolution(int[] arr, int start, int end,int k){
+        while(start<end){
+            int mid = start+(end-start)/2;
+            int sum=0;
+            int pieces=1;
+            for(int num:arr){
+                if(sum+num>mid){
+                    sum=num;
+                    pieces++;
+                }
+                else{
+                    sum+=num;
+                }
+            }
+            if(pieces>k){
+                start=mid+1;
+            }
+            else{
+                end=mid; 
+            }
+
+        }
+        return start;
+    }
+
+    public int splitArray(int[] arr, int k) {
+        int end=0;
+        int start=0;
+        for (int i:arr){
+            end+=i;
+            start=Math.max(start,i);
+        }  
+
+        // for (int i:arr){
+        //     end+=i;
+        //     if(i>start){
+        //         start=i;
+        //     }
+        // }        
+
+        return SplitArraySortSolution(arr,start,end,k); 
+    }
+}
